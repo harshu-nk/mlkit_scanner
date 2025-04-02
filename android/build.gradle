@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.dayzsolutions.mlkit_scanner'
+    namespace 'com.dns_technologies.mlkit_scanner'
     compileSdkVersion 28
 
     sourceSets {
