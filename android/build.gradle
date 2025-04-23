@@ -26,14 +26,14 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.dns_technologies.mlkit_scanner'
-    compileSdkVersion 34
+    compileSdkVersion 33
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
     defaultConfig {
-        minSdkVersion 34
+        minSdkVersion 33
     }
     lintOptions {
         disable 'InvalidPackage'
