@@ -2,19 +2,19 @@ group 'com.dns_technologies.mlkit_scanner'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '2.1.0'
+    ext.kotlin_version = '1.9.0' // ✅ Downgraded Kotlin
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath 'com.android.tools.build:gradle:7.4.2' // ✅ Updated Gradle plugin (works with Kotlin 1.9)
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-rootProject.allprojects {
+allprojects {
     repositories {
         google()
         mavenCentral()
@@ -26,22 +26,27 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.dns_technologies.mlkit_scanner'
-    compileSdkVersion 33
+    compileSdkVersion 33 // ✅ Matches your app
+
+    defaultConfig {
+        minSdkVersion 21     // ✅ Lowered from 33 to 21 (or use same as your app)
+        targetSdkVersion 33
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
     }
-    defaultConfig {
-        minSdkVersion 33
-    }
+
     lintOptions {
         disable 'InvalidPackage'
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -50,7 +55,9 @@ android {
 dependencies {
     api "com.otaliastudios:cameraview:2.7.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.mlkit:barcode-scanning:17.1.0'
+
+    // ✅ Downgrade ML Kit to avoid minSdk 35 requirement
+    implementation 'com.google.mlkit:barcode-scanning:17.0.2'
 
     testImplementation 'junit:junit:4.13.2'
 }
