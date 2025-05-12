@@ -2,14 +2,14 @@ group 'com.dns_technologies.mlkit_scanner'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '2.1.0' // ✅ Downgraded Kotlin
+    ext.kotlin_version = '2.1.20' // ✅ Downgraded Kotlin
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.2.0' // ✅ Updated Gradle plugin (works with Kotlin 1.9)
+        classpath 'com.android.tools.build:gradle:8.2.2' // ✅ Updated Gradle plugin (works with Kotlin 1.9)
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,11 +26,11 @@ apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.dns_technologies.mlkit_scanner'
-    compileSdkVersion 33 // ✅ Matches your app
+    compileSdkVersion 35 // ✅ Matches your app
 
     defaultConfig {
         minSdkVersion 35     // ✅ Lowered from 33 to 21 (or use same as your app)
-        targetSdkVersion 33
+        targetSdkVersion 35
     }
 
     sourceSets {
