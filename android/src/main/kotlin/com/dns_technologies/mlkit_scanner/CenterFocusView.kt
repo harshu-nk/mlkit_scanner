@@ -58,7 +58,7 @@ class CenterFocusView constructor(
 
     private fun createGestureDetector(): GestureDetector {
         return GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
-            override fun onSingleTapUp(e: MotionEvent): Boolean {
+            override fun onSingleTapUp(e: MotionEvent?): Boolean {
                 autoFocus()
                 return true
             }
