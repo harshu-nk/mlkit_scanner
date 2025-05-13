@@ -54,7 +54,8 @@ android {
 
 dependencies {
     api "com.otaliastudios:cameraview:2.7.2"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // ✅ Downgrade ML Kit to avoid minSdk 35 requirement
     implementation 'com.google.mlkit:barcode-scanning:17.1.0'
