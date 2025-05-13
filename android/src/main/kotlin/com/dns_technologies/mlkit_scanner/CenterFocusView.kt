@@ -63,7 +63,7 @@ class CenterFocusView constructor(
                 return true
             }
 
-            override fun onLongPress(e: MotionEvent?) {
+            override fun onLongPress(e: MotionEvent) {
                 lockFocus()
             }
         })
