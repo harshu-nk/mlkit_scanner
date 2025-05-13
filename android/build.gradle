@@ -29,7 +29,7 @@ android {
     compileSdkVersion 35 // ✅ Matches your app
 
     defaultConfig {
-        minSdkVersion 21     // ✅ Lowered from 33 to 21 (or use same as your app)
+        minSdkVersion 33     // ✅ Lowered from 33 to 21 (or use same as your app)
         targetSdkVersion 35
     }
 
