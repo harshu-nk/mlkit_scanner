@@ -134,7 +134,7 @@ class CenterFocusView constructor(
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        event?.let { gestureDetector.onTouchEvent(it) }
+       return event?.let { gestureDetector.onTouchEvent(it) }
     }
 
     override fun onAnimationStart(animation: Animation?) {
