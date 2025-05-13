@@ -43,7 +43,7 @@ Add key to the `ios/Runner/Info.plist`:
 Change the minimum Android sdk version to 21 (or higher) in your `android/app/build.gradle` file.
 
 ```
-minSdkVersion 21
+minSdkVersion 33
 ```
 ### Example 
 
